@@ -62,7 +62,7 @@ int Direc = 1; //direção
 		futura e sua velocidade */
         setTurnRightRadians(robocode.util.Utils.normalRelativeAngle(EPosic-getHeadingRadians()+EVel/getVelocity()));
 	
-	//se movimenta na direção do inimigo, pegando a distancia e diminuindo ela por 140 blocos de distancia * a poa posição do inimigo. \/
+	//se movimenta na direção do inimigo, pegando a distancia e diminuindo ela por 140 blocos de distancia X a  posição do inimigo. \/
 		setAhead((e.getDistance() - 140)*Direc);
 		fire(2.5); //Atira no inimigo utilizando um ataque mais rapido que o fire 3
 		}
