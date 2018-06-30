@@ -32,7 +32,14 @@ int Direc = 1; //direção
         
 
          while(true) {      
-		
+		if(getX() < 100 || getX() > 900) {
+ setTurnRight(190);
+  ahead(100);}
+  execute();
+  	if(getY() < 100 || getY() > 900) {
+ setTurnLeft(190);
+  ahead(100);}
+  execute();
 		}
 	}
 
