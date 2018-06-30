@@ -11,12 +11,14 @@ import robocode.TeamRobot;
  * IronMan - a robot by Mister Turtle
  */
 public class Ironman extends TeamRobot{
-int Direc = 1; //direção
-    double getFieldWidth;
-    double getFieldHeight;
-
+   int Direc = 1; 
+   
  
     public void run() {
+	double x= getX();
+   double y= getY();
+   double alt= getWidth();
+   double larg=getHeight();
         System.out.println("Iniciando Mark I");
         setBodyColor(Color.blue);
         setGunColor(Color.red);
@@ -32,16 +34,33 @@ int Direc = 1; //direção
         
 
          while(true) {      
-		if(getX() < 100 || getX() > 900) {
- setTurnRight(190);
-  ahead(100);}
-  execute();
-  	if(getY() < 100 || getY() > 900) {
- setTurnLeft(190);
-  ahead(100);}
-  execute();
-		}
-	}
+if(x>=alt){
+turnRight(180);
+ahead(200);
+execute();
+}
+if(x<=larg){
+turnRight(180);
+ahead(200);
+execute();
+}
+if(x>=larg){
+turnRight(180);
+ahead(200);
+execute();
+}
+if(y>=alt){
+turnRight(180);
+ahead(200);
+execute();
+}
+if(y<=alt){
+turnRight(180);
+ahead(200);
+execute();
+   } 
+  }
+ }
 
  
 
