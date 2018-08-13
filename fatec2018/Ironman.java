@@ -1,6 +1,4 @@
 package fatec2018;
-
-
 import robocode.*;
 import java.awt.Color;
 import robocode.HitRobotEvent;
@@ -8,7 +6,7 @@ import robocode.ScannedRobotEvent;
 import robocode.TeamRobot;
 
 /**
- * IronMan - a robot by Mister Turtle
+ * IronMan - a robot by Bryan Pereira
  */
 public class Ironman extends TeamRobot{
    int Direc = 1; 
@@ -28,9 +26,9 @@ public class Ironman extends TeamRobot{
 	
 	    
 		
-        setAdjustRadarForRobotTurn(true);// seta o radar para ficar parado enquanto o robô muda de posição
-		setAdjustGunForRobotTurn(true); // mesma coisa para a arma
-		turnRadarRightRadians(Double.POSITIVE_INFINITY);//radar gira para a direita continuamente
+        setAdjustRadarForRobotTurn(true);// seta o radar para ficar parado enquanto o robô muda de posição.
+		setAdjustGunForRobotTurn(true); // mesma coisa para a arma.
+		turnRadarRightRadians(Double.POSITIVE_INFINITY);//radar gira para a direita continuamente.
         
 
          while(true) {      
@@ -75,7 +73,7 @@ execute();
             return;
         }
 
-   double EPosic = e.getBearingRadians()+getHeadingRadians();// pega a posição atual e para onde o robô está indo
+   double EPosic = e.getBearingRadians()+getHeadingRadians();// pega a posição atual e para onde o robô está indo.
    double EVel = e.getVelocity() * Math.sin(e.getHeadingRadians() - EPosic); //pega a velocidade do robô inimigo e calcula a tragetória 
    double gunTurnAmount;//o quanto a arma deve virar
    setTurnRadarLeftRadians(getRadarTurnRemainingRadians());     
@@ -86,12 +84,12 @@ execute();
 		setTurnGunRightRadians(gunTurnAmount);//seta a direção da arma para o inimigo
 		
 		/** \/ pega o angulo do inimigo e vira até ele,  levando em conta posição atual - a posição
-		futura e sua velocidade */
+		futura e sua velocidade. */
         setTurnRightRadians(robocode.util.Utils.normalRelativeAngle(EPosic-getHeadingRadians()+EVel/getVelocity()));
 	
 	//se movimenta na direção do inimigo, pegando a distancia e diminuindo ela por 140 blocos de distancia X a  posição do inimigo. \/
 		setAhead((e.getDistance() - 140)*Direc);
-		fire(2.5); //Atira no inimigo utilizando um ataque mais rapido que o fire 3
+		fire(2.5); //Atira no inimigo utilizando um ataque mais rapido que o fire 3.
 		}
 		
 // \/ se o robô estiver muito perto utilizar o fire 3
